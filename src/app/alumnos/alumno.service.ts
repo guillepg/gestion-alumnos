@@ -13,7 +13,7 @@ import { IAlumno } from './alumno.interface';
 export class AlumnoService {
 
   alumnos:IAlumno[];
-  private subject: Subject<IAlumno[]> = new Subject<IAlumno[]>;
+//  private subject: Subject<IAlumno[]> = new Subject<IAlumno[]>();
 
   constructor(private _http:HttpClient) {
 
@@ -26,7 +26,7 @@ export class AlumnoService {
 
   getAlumnos(): Observable<IAlumno[]> {
     this.alumnos = JSON.parse(localStorage.getItem('alumnos')) || [];
-    this.subject.next(this.alumnos);  // emite un nuevo evento
+    //this.subject.next(this.alumnos);  // emite un nuevo evento
     return Observable.of(this.alumnos);
   }
 
@@ -63,13 +63,13 @@ export class AlumnoService {
         // 2.- añadir a esa coleccion el nuevo alumno
         this.alumnos.push(al);
 
-        this.subject.next(this.alumnos);
+        //this.subject.next(this.alumnos);
         
         // 3.- persistir la colección modificada
         localStorage.setItem('alumnos',JSON.stringify(this.alumnos));
-        return Observable.of(true);
+        return Observable.of(this.alumnos);
       } catch (ex){
-        return Observable.of(false);
+        return null;
       }
       
       

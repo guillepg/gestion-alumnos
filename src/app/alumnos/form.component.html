@@ -1,0 +1,34 @@
+<form #formRef="ngForm" (ngSubmit)="enviarDatos(formRef.value)" novalidate>
+
+  <div class="form-group">
+    <label for="dniAlumno">DNI</label>
+    <input required type="text" class="form-control" id="dniAlumno" placeholder="DNI" 
+        name="dni" ngModel #dni="ngModel">
+        <span class="error-message" *ngIf="dni.touched && dni?.errors?.required">Campo requerido</span>
+  </div>
+
+  <div class="form-group">
+    <label for="nombreAlumno">Nombre</label>
+    <input type="text" class="form-control" id="nombreAlumno" placeholder="Nombre" 
+        name="nombre" ngModel #nombre="ngModel">
+  </div>
+
+  <div class="form-group">
+    <label for="apellidoAlumno">Apellido</label>
+    <input type="text" class="form-control" id="apellidoAlumno" placeholder="Apellido" 
+        name="apellido" ngModel #apellido="ngModel">
+  </div>
+
+  <div class="form-group">
+    <label for="cursoAlumno">Curso</label>
+    <input type="text" class="form-control" id="cursoAlumno" placeholder="Curso"
+        name="curso" ngModel #curso="ngModel">
+  </div>
+
+  <div class="checkbox">
+    <label>
+      <input type="checkbox"> Check me out
+    </label>
+  </div>
+  <button type="submit" class="btn btn-default" [disabled]="formRef.invalid">Submit</button>
+</form>

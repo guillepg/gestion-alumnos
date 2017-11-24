@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import { IAlumno } from './alumno.interface';
 import { AlumnoService } from './alumno.service';
 import { Utils } from '../utils/utils';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -23,11 +24,10 @@ export class AlumnoListComponent implements OnInit, OnDestroy {
   alumnos:IAlumno[];
   alumnosOrdenados: IAlumno[];
   
-  constructor(private _alumnoService: AlumnoService) {
+  constructor(private _alumnoService: AlumnoService, private _router: Router) {
   }
 
   ngOnInit() {
-    console.log('ngOnInit_listado');
     this.subscription = this._alumnoService.getAlumnos()
       .subscribe((alumnos) => {
         this.alumnos = alumnos;
@@ -56,15 +56,6 @@ export class AlumnoListComponent implements OnInit, OnDestroy {
   }
 
   nuevoAlumno(){
-    let  alumno: IAlumno = {
-      dni: '44444444H',
-      nombre: 'Nombre 4',
-      apellido: 'Apellido 4',
-      curso: '4-ESO',
-      notas: [1,4,6,8],
-      avatar: ''
-    }
-
-    this._alumnoService.setAlumno(alumno);
+    this._router.navigate(['/formulario']);
   }
 }
