@@ -1,0 +1,28 @@
+<div *ngIf="alumno" class="panel panel-primary">
+    <div class="panel-heading">
+        {{pageTitle}}
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+          <img src='{{alumno.avatar}}' />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">Nombre:</div><div class="col-md-6">{{alumno.nombre + " " + alumno.apellido}}</div>
+    </div>    
+    <div class="row">    
+        <div class="col-md-2">Notas:</div>
+        <div class="col-md-6">
+            <ul>
+                <li *ngFor="let nota of alumno.notas">
+                    {{nota}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="panel-footer">
+       <a class="btn btn-default" (click)="back()">
+         <i class="glyphicon glyphicon-chevron-left"></i>Volver lstado
+       </a>
+     </div>
+</div>

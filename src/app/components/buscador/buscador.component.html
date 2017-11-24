@@ -1,0 +1,16 @@
+<form class="navbar-form navbar-right" 
+            novalidate 
+            autocomplete="off" 
+            #form="ngForm"
+            (ngSubmit)="buscar(clave.value)"
+            >
+    <div class="form-group">
+      <input type="text" 
+              placeholder="Termino busqueda..." 
+              class="form-control"
+              name="terminoBusqueda"
+              #clave
+              >
+    </div>
+    <button type="submit" class="btn btn-success">Buscar</button>
+  </form>

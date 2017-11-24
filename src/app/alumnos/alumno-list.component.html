@@ -1,0 +1,48 @@
+<div class="panel  panel-primary">
+  <!-- Default panel contents -->
+  <div class="panel-heading">
+    <span>{{pageTitle}}</span>
+  </div>
+  <div class="panel-body">
+    <div class="table-responsive">
+      <!-- Table -->
+      <table 
+        class="table"
+        *ngIf="alumnos && alumnos.length" >
+        <thead>
+          <tr>
+            <th>
+              <!-- boton imagen -->
+              <button class="btn btn-primary"
+                        (click) = "toggleImage()">
+                          {{showImage ? 'Ocultar' : 'Mostrar'}} Avatar
+              </button>
+            </th>
+            <th>
+              Nombre Completo
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor = "let alumno of alumnosOrdenados">
+            <td>
+              <!-- imagen -->
+              <img *ngIf="showImage"
+                [src]="alumno.avatar"
+                [title] = "alumno.apellido"
+                [style.width.px] = "imageWidth"
+                [style.margin.px] = "imageMargin"
+              />
+            </td>
+            <td>
+              <a [routerLink]="['/alumnos', alumno.dni]">{{alumno.nombre}},{{alumno.apellido}}</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button btn btn-primary block (click)="nuevoAlumno()">Alta alumno</button>
+    </div>
+  </div>
+
+  
+</div>

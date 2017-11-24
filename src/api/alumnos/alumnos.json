@@ -1,0 +1,26 @@
+[
+    {
+      "dni":"11111111H",
+      "nombre":"Name1",
+      "apellido": "LasnName1",
+      "curso": "3 - PRIMARIA",
+      "notas": [1,4,7,9],
+      "avatar": "https://www.hikashop.com/media/kunena/avatars/resized/size144/crypsis_hikashop/nophoto.png"
+    },
+    {
+      "dni":"22222222H",
+      "nombre":"Name2",
+      "apellido": "LasnName2",
+      "curso": "1 ESO",
+      "notas": [8,4,5,2],
+      "avatar": "https://www.hikashop.com/media/kunena/avatars/resized/size144/crypsis_hikashop/nophoto.png"
+    },
+    {
+      "dni":"33333333H",
+      "nombre":"Name3",
+      "apellido": "LasnName3",
+      "curso": "4-ESO",
+      "notas": [1,9,4,7],
+      "avatar": "https://www.hikashop.com/media/kunena/avatars/resized/size144/crypsis_hikashop/nophoto.png"
+    }
+  ]
